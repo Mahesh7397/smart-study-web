@@ -17,7 +17,7 @@ body {
 }
 
 .glass {
-    background: rgba(15, 23, 42, 0.7);
+    background: var(--dark);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(99, 102, 241, 0.2);
@@ -83,7 +83,8 @@ body {
 }
 
 .hero-bg {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    /* background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); */
+    
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }

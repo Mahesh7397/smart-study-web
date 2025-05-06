@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { GooglePlayLogo,AppleLogo ,Book,Note,ListNumbers,HeadCircuit,Calculator ,CalendarDots  ,Briefcase ,ChatsCircle,Newspaper ,EnvelopeSimple ,MapPin,InstagramLogo,XLogo,LinkedinLogo,FacebookLogo} from "@phosphor-icons/react";
+import { GooglePlayLogo,AppleLogo ,Book,Note,ListNumbers,HeadCircuit,Calculator ,CalendarDots  ,Briefcase ,ChatsCircle,Newspaper ,EnvelopeSimple ,MapPin,InstagramLogo,LinkedinLogo,List,X} from "@phosphor-icons/react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css'
@@ -43,7 +43,6 @@ function App() {
     }, []);
   
     const openMenu = () => {
-        console.log(sidebarRef)
       sidebarRef.current.classList.remove('closed');
       sidebarRef.current.classList.add('open');
     };
@@ -97,7 +96,7 @@ function App() {
                 </div>
                 
                 <button id="menu-toggle" onClick={()=>openMenu()} className="md:hidden text-slate-300 hover:text-white focus:outline-none">
-                    open menu
+                <List size={30} color="#fcfcfc" weight="bold" />
                 </button>
             </div>
         </div>
@@ -107,9 +106,7 @@ function App() {
     <div id="sidebar" ref={sidebarRef} className="sidebar fixed top-0 right-0 h-full w-64 bg-slate-900/95 backdrop-blur-lg z-50 p-6 closed md:hidden">
         <div className="flex justify-end">
             <button id="close-menu" onClick={closeMenu} className="text-slate-300 hover:text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
+            <X size={30} color="#fcfcfc" weight="bold" />
             </button>
         </div>
         
@@ -129,7 +126,12 @@ function App() {
         <div className="absolute top-1/3 right-1/4 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
         <div className="absolute bottom-1/4 left-1/3 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>
         <div className="absolute bottom-1/3 right-1/3 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div>
-        
+        {/* //// */}
+        <div className="absolute top-1/4 left-1/2 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
+        <div className="absolute top-1/2 right-1/4 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
+        <div className="absolute bottom-1/2 left-1/3 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>
+        <div className="absolute bottom-1/3 right-1/2 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div>
+
         <div className="container mx-auto px-6 py-12">
             <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
@@ -193,7 +195,7 @@ function App() {
     </section>
 
     {/* <!-- Features Section --> */}
-    <section id="features" className="py-20 bg-slate-900/50">
+    <section id="features" className="py-20 bg-transparent">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16" data-aos="fade-up">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Powerful Features</h2>
@@ -289,7 +291,7 @@ function App() {
 
     {/* <!-- Reviews Section --> */}
     <section id="reviews" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm z-0"></div>
+        <div className="absolute inset-0 bg-transparent backdrop-blur-sm z-0"></div>
         <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16" data-aos="fade-up">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">What Students Say</h2>
@@ -451,18 +453,16 @@ function App() {
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6 gradient-text">Follow Us</h3>
                                 <div className="flex space-x-4">
-                                    <a href="#" className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                                    <a href="#"  className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transform transition-transform duration-300 ease-in-out
+                   hover:scale-110 cursor-pointer">
                                     <InstagramLogo size={30} color="#fcfbfe" />
                                     </a>
-                                    <a href="#" className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
-                                    <XLogo size={30} color="#fcfbfe" />
-                                    </a>
-                                    <a href="#" className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
+                                    
+                                    <a href="#" className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transform transition-transform duration-300 ease-in-out
+                   hover:scale-110 cursor-pointer">
                                     <LinkedinLogo size={30} color="#fcfbfe" />
                                     </a>
-                                    <a href="#" className="gradient-bg w-12 h-12 rounded-full flex items-center justify-center text-white hover:opacity-90 transition duration-300">
-                                    <FacebookLogo size={30} color="#fcfbfe" />
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -473,7 +473,7 @@ function App() {
     </section>
 
     {/* <!-- Footer --> */}
-    <footer className="bg-slate-900/80 py-8 border-t border-slate-800">
+    <footer className="bg-transparent py-8 border-t border-slate-800">
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
@@ -502,11 +502,11 @@ function App() {
     </footer>
 
     {/* <!-- Chat Widget --> */}
-    <div className="fixed bottom-8 right-8 z-50">
+    {/* <div className="fixed bottom-8 right-8 z-50">
         <button className="gradient-bg chat-widget w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg">
             <i className="fas fa-comment-dots text-2xl"></i>
         </button>
-    </div>
+    </div> */}
     </>
   )
 }
