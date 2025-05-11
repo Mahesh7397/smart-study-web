@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { GooglePlayLogo,AppleLogo ,Book,Note,ListNumbers,HeadCircuit,Calculator ,CalendarDots  ,Briefcase ,ChatsCircle,Newspaper ,EnvelopeSimple ,MapPin,InstagramLogo,LinkedinLogo,List,X} from "@phosphor-icons/react";
+import { GooglePlayLogo,AppleLogo ,Book,Note,ListNumbers,HeadCircuit,Calculator ,CalendarDots  ,Briefcase ,ChatsCircle,Newspaper ,EnvelopeSimple ,Phone,InstagramLogo,LinkedinLogo,List,X} from "@phosphor-icons/react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Marquee from "react-fast-marquee"
 import './App.css'
+import Heroimage from './assets/herohome.png'
+import Aboutimage from './assets/heroabout.png'
 
 function App() {
     const sidebarRef = useRef(null);
@@ -11,6 +14,30 @@ function App() {
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
   
+    const Reviewcommandes=[
+        {
+            profileimg:"JS",
+            name:"Jessica S.",
+            command:`"The AI tutor helped me understand concepts I'd been struggling with for months. My grades improved by a full letter grade in just one semester!"`
+        },
+        {
+            profileimg:"AM",
+            name:"Alex M.",
+            command:`"The question bank and notes saved me hundreds of hours. Instead of searching through multiple sources, everything I need is in one place. The schedule planner keeps me on track too."`
+        },
+        {
+            profileimg:"RK",
+            name:"Rahul K.",
+            command:`"As an international student, the discussion forums were incredibly helpful. The interview prep resources helped me land my dream internship. Worth every penny!"`
+        },
+        {
+            profileimg:"TP",
+            name:"Taylor P.",
+            command:`"The grade calculator took all the guesswork out of my finals. I knew exactly what I needed to score to maintain my GPA. The AI tutor is like having a personal professor 24/7."`
+        }
+    ]
+
+
     useEffect(() => {
       AOS.init({
         duration: 800,
@@ -120,33 +147,42 @@ function App() {
     </div>
 
     {/* <!-- Hero Section --> */}
-    <section id="home" className="min-h-screen hero-bg pt-24 flex items-center relative overflow-hidden">
+    <section id="home" className="min-h-screen hero-bg p-2 flex items-center relative overflow-hidden">
         {/* <!-- Floating elements --> */}
-        <div className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
+        {/* <div className="absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
         <div className="absolute top-1/3 right-1/4 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
         <div className="absolute bottom-1/4 left-1/3 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>
         <div className="absolute bottom-1/3 right-1/3 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div>
         {/* //// */}
-        <div className="absolute top-1/4 left-1/2 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
+        {/* <div className="absolute top-1/4 left-1/2 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
         <div className="absolute top-1/2 right-1/4 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
         <div className="absolute bottom-1/2 left-1/3 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>
         <div className="absolute bottom-1/3 right-1/2 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div>
-
-        <div className="container mx-auto px-6 py-12">
+        
+        <div className="absolute top-1/7 left-1/5 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
+        <div className="absolute top-1/2 right-1/5 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
+        <div className="absolute bottom-1/3 left-1/2 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>
+        <div className="absolute bottom-1/6 right-1/4 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div>
+        {/* //// */}
+        {/* <div className="absolute top-1/6 left-1/3 w-8 h-8 rounded-full bg-purple-500/20 floating"></div>
+        <div className="absolute top-1/3 right-1/7 w-12 h-12 rounded-full bg-indigo-500/20 floating floating-delay-1"></div>
+        <div className="absolute bottom-1/2 left-1/6 w-10 h-10 rounded-full bg-purple-500/20 floating floating-delay-2"></div>  */}
+        {/* <div className="absolute bottom-1/5 right-1/6 w-6 h-6 rounded-full bg-indigo-500/20 floating"></div> */}
+        <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                         <span className="gradient-text">Smart Study</span> – Smarter Learning Starts Here
                     </h1>
-                    <p className="text-xl text-slate-300 mb-8 max-w-lg">
-                        All your study tools, AI tutors, and college resources in one smart platform.
+                    <p className="text-2xl text-slate-300 mb-8 max-w-lg">
+                    All your study toolkit for learning success in one app
                     </p>
                     
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#" className="gradient-bg glow text-white px-8 py-4 rounded-lg font-semibold text-center hover:opacity-90 transition duration-300 flex items-center justify-center">
                         <GooglePlayLogo size={25} color="#fcfbfe"  className="fab mr-3 text-xl"/> Install for Android
                         </a>
-                        <a href="#" className="bg-slate-800 glow text-white px-8 py-4 rounded-lg font-semibold text-center hover:bg-slate-700 transition duration-300 flex items-center justify-center">
+                        <a href="#" className="bg-slate-800 glow  text-white px-8 py-4 rounded-lg font-semibold text-center  transition duration-300 flex items-center justify-center">
                         <AppleLogo size={25} color="#fcfbfe" className="fab mr-3 text-xl"/>Install for iOS
                         </a>
                     </div>
@@ -154,9 +190,9 @@ function App() {
                 
                 <div className="md:w-1/2 flex justify-center" data-aos="fade-left">
                     <div className="relative">
-                        <div className="gradient-border p-2 rounded-3xl">
-                            <div className="w-64 h-auto bg-slate-800 rounded-2xl overflow-hidden">
-                                <img src="https://cdn.dribbble.com/users/1787323/screenshots/14267644/media/4b91e6d5a9b5d1c8a3b8d4f4e5c5d5e5.png" alt="Smart Study App" className="w-full h-auto"/>
+                        <div className=" p-2 rounded-3xl">
+                            <div className="w-96 h-auto  rounded-2xl overflow-hidden">
+                                <img src={Heroimage} alt="Smart Study App" className="w-full h-auto"/>
                             </div>
                         </div>
                     </div>
@@ -173,18 +209,19 @@ function App() {
                     <div className="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">What is Smart Study?</h2>
                         <p className="text-lg text-slate-300 mb-6">
-                            Smart Study is revolutionizing academic success by combining AI-powered tools with carefully curated educational resources. Our platform is designed to help college students study smarter, not harder.
+                        Smart Study is an innovative educational platform designed exclusively for students to access organized academic resources, AI-powered study assistance, and interactive learning features — all in one place. Whether you're preparing for exams & interviews, revising concepts, or collaborating with peers, Smart Study empowers you to learn smarter, not harder.
                         </p>
                         <p className="text-lg text-slate-300">
-                            We believe every student deserves access to high-quality learning tools regardless of their background. Our mission is to make academic excellence accessible to all through technology.
+                        Our goal is to create a unified digital environment where students can explore syllabus-wise question banks, lecture notes, MCQs, AI tutoring, a student forum, and performance analytics, interview prep, resume building  — with a seamless and personalized experience.
+                        Smart Study is built by students, for students — with a commitment to simplicity, focus, and academic success.
                         </p>
                     </div>
                     
                     <div className="md:w-1/2 flex justify-center" data-aos="fade-left">
                         <div className="relative w-full max-w-md">
-                            <div className="gradient-border p-1 rounded-2xl">
-                                <div className="bg-slate-800 rounded-xl p-8">
-                                    <img src="https://cdn.dribbble.com/users/1787323/screenshots/14267644/media/4b91e6d5a9b5d1c8a3b8d4f4e5c5d5e5.png" alt="About Smart Study" className="w-full h-auto"/>
+                            <div className=" p-1 rounded-2xl">
+                                <div className=" rounded-xl p-8">
+                                    <img src={Aboutimage} alt="About Smart Study" className="w-full h-auto"/>
                                 </div>
                             </div>
                         </div>
@@ -228,8 +265,8 @@ function App() {
                     <div className="gradient-bg p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                     <ListNumbers size={40} color="#fcfbfe" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-center">Syllabus Finder</h3>
-                    <p className="text-slate-300 text-center">Explore multi-college syllabi with topic breakdowns.</p>
+                    <h3 className="text-xl font-semibold mb-3 text-center">Smart Practice</h3>
+                    <p className="text-slate-300 text-center"></p>
                 </div>
                 
                 {/* <!-- Feature 4 --> */}
@@ -301,90 +338,26 @@ function App() {
             </div>
             
             <div className="relative">
-                <div className="scroll-container flex overflow-x-auto pb-8 space-x-6 scrollbar-hide" ref={scrollContainerRef}
+                <div className=" grid md:grid-cols-1 grid-row-1 gap-8 " ref={scrollContainerRef}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeaveOrUp}
         onMouseUp={handleMouseLeaveOrUp}
         onMouseMove={handleMouseMove}>
-                    {/* <!-- Review 1 --> */}
-                    <div className="scroll-item flex-shrink-0 testimonial-card glass rounded-2xl p-8" data-aos="fade-right">
+             <Marquee speed={50} >{Reviewcommandes.map((data)=>{
+               return(
+                <div className=" flex-shrink-0 testimonial-card glass rounded-2xl p-8 w-screen h-auto m-6" data-aos="fade-right">
                         <div className="flex items-center mb-6">
-                            <div className="gradient-bg w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">JS</div>
+                            <div className="gradient-bg w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">{data.profileimg}</div>
                             <div>
-                                <h4 className="font-semibold text-lg">Jessica S.</h4>
-                                <div className="star-rating text-yellow-400">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                </div>
+                                <h4 className="font-semibold text-lg">{data.name}</h4>
                             </div>
                         </div>
                         <p className="text-slate-300 italic">
-                            "The AI tutor helped me understand concepts I'd been struggling with for months. My grades improved by a full letter grade in just one semester!"
+                            {data.command}
                         </p>
                     </div>
-                    
-                    {/* <!-- Review 2 --> */}
-                    <div className="scroll-item flex-shrink-0 testimonial-card glass rounded-2xl p-8" data-aos="fade-right" data-aos-delay="100">
-                        <div className="flex items-center mb-6">
-                            <div className="gradient-bg w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">AM</div>
-                            <div>
-                                <h4 className="font-semibold text-lg">Alex M.</h4>
-                                <div className="star-rating text-yellow-400">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star-half-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p className="text-slate-300 italic">
-                            "The question bank and notes saved me hundreds of hours. Instead of searching through multiple sources, everything I need is in one place. The schedule planner keeps me on track too."
-                        </p>
-                    </div>
-                    
-                    {/* <!-- Review 3 --> */}
-                    <div className="scroll-item flex-shrink-0 testimonial-card glass rounded-2xl p-8" data-aos="fade-right" data-aos-delay="200">
-                        <div className="flex items-center mb-6">
-                            <div className="gradient-bg w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">RK</div>
-                            <div>
-                                <h4 className="font-semibold text-lg">Rahul K.</h4>
-                                <div className="star-rating text-yellow-400">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p className="text-slate-300 italic">
-                            "As an international student, the discussion forums were incredibly helpful. The interview prep resources helped me land my dream internship. Worth every penny!"
-                        </p>
-                    </div>
-                    
-                    {/* <!-- Review 4 --> */}
-                    <div className="scroll-item flex-shrink-0 testimonial-card glass rounded-2xl p-8" data-aos="fade-right" data-aos-delay="300">
-                        <div className="flex items-center mb-6">
-                            <div className="gradient-bg w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">TP</div>
-                            <div>
-                                <h4 className="font-semibold text-lg">Taylor P.</h4>
-                                <div className="star-rating text-yellow-400">
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                    <i className="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p className="text-slate-300 italic">
-                            "The grade calculator took all the guesswork out of my finals. I knew exactly what I needed to score to maintain my GPA. The AI tutor is like having a personal professor 24/7."
-                        </p>
-                    </div>
+               )
+            })}</Marquee>
                 </div>
             </div>
         </div>
@@ -434,17 +407,18 @@ function App() {
                                         </div>
                                         <div>
                                             <p className="text-slate-300">Email</p>
-                                            <a href="mailto:support@smartstudy.app" className="text-purple-400 hover:text-purple-300">support@smartstudy.app</a>
+                                            <a href="mailto:smartstudyproject2025@gmail.com" className="text-purple-400 hover:text-purple-300">smartstudyproject2025@gmail.com</a>
                                         </div>
                                     </div>
                                     
                                     <div className="flex items-start">
                                         <div className="gradient-bg p-3 rounded-full mr-4">
-                                        <MapPin size={20} color="#fcfbfe" />
+                                        <Phone size={20} color="#fcfbfe" />
                                         </div>
                                         <div>
-                                            <p className="text-slate-300">Office</p>
-                                            <p className="text-slate-300">123 Education St, Tech City, TC 10001</p>
+                                            <p className="text-slate-300">Mobile No:</p>
+                                            <p className="text-slate-300">+91 6381181744 </p>
+                                            <p className="text-slate-300">+91 7397423635 </p>
                                         </div>
                                     </div>
                                 </div>

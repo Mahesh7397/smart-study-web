@@ -84,10 +84,16 @@ body {
 
 .hero-bg {
     /* background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); */
-    
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    /* background-image: linear-gradient(to right,#fffdfd,transparent 1px);
+    background-size: 400% 400%; */
+    animation: gradientBG 150s ease infinite;
+    background-image: 
+    linear-gradient(to right, #090b16 2px, transparent 2px),
+    linear-gradient(to bottom, #0008525b 2px, transparent 2px);
+
+  background-size:25px 25px; 
 }
+
 
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
@@ -109,9 +115,9 @@ body {
     min-width: 300px;
 }
 
-.glow {
+/* .glow {
     box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
-}
+} */
 
 .glow:hover {
     box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
